@@ -1,0 +1,35 @@
+---
+title: "Academic Experience"
+---
+
+### Education
+**Grinnell College**  2017-2020  
+*Bachelor of Arts in Biochemistry*  
+
+**Columbia University**  2021-2023  
+*Master of Science in Biostatistics*
+
+### Internship Experience
+**Student Researcher**  May-August 2019  
+*Effect of Safeners on GR-1 Expression*  
+* Planned, designed, and developed a preliminary study that investigates the effect of safeners on Glutathione reductase expression by designing primers using bioinformatics, performing qPCR, and analyzing qPCR data.
+
+**Research Assistant**  June-August 2021  
+*Gene Family Analysis for GR in ten Rosaceae species*  
+* Constructed amino acids databases for ten Rosaceae species and Arabidopsis thaliana, performed protein basic local alignment search (BLASTP) using GR sequence of Arabidopsis thaliana as the query sequence, and identified GR genes from ten Rosaceae species.  
+* Analyzed gene structures and motifs of the gene family and constructed a phylogenetic tree for GR genes in ten Rosaceae species.
+
+### Projects 
+**Traditional Data Analysis Project in Scheme**  April-May 2020  
+* Obtained a dataset of coronavirus sequences comprising 7810 entries and 13 columns; cleaned the dataset and wrote and documented a program in Scheme to extract information about certain coronavirus sequences, visualized the geographical distribution of these sequences, and displayed sequences within a given range of lengths.
+
+**COVID-19 RShiny Project**  September-October 2020  
+* Obtained a data set of COVID-19 cases and deaths in each day during the outbreak; summarized the data and wrote a documented program in R and built a Shiny web application to visualize cases and death of COVID-19 epidemic in different countries and continents with GUI and functionality in professional quality.  
+* Performed principal components analysis and used LASSO model to find possible predictors for the total cases and total deaths caused by COVID-19.  
+
+### Skills
+**Language**: English (fluent) / Chinese (fluent) / Japanese (intermediate)  
+**Technology**: R programming, Scheme programming, Python programming, Minitab, Topspin, SnapGene, Chimera, ChemDraw, Microsoft Office Suit, Photoshop  
+**Lab**: Biology lab skills (bioinformatics, PCR, gel-electrophorisis, real-time PCR, clonogenics, dissection), Organic Chemistry lab skills (NMR and IR spectroscopy, thin-layer chromotography), Biochemistry lab skills (spectrophotometer, Bradford protein determination, column chromatography, SDS-PAGE)
+
+
