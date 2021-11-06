@@ -1,0 +1,84 @@
+---
+title: "Flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("instacart")
+```
+
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Barchart
+
+```{r message=FALSE, echo=FALSE}
+grouped_by_aisle <-
+  instacart %>%
+  group_by(aisle) %>%
+  summarize(n = n()) %>%
+  arrange(n)%>%
+  tail(n=10)
+
+grouped_by_aisle %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis")%>%
+  layout(title = 'Number of Items Ordered in Top 10 Aisles',
+         xaxis = list(title = 'Aisle'),
+         yaxis = list (title = 'Number of items ordered'))
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Spaghetti Plot
+
+```{r  echo=FALSE, message=FALSE}
+fresh_fruits <-
+  instacart %>%
+  filter(aisle=="fresh fruits")%>%
+  group_by(order_dow) %>%
+  summarize(mean_hour = mean(order_hour_of_day)) %>%
+  mutate(aisle = "fresh fruits")
+
+soap <-
+  instacart %>%
+  filter(aisle == "soap") %>%
+  group_by(order_dow) %>%
+  summarize(mean_hour = mean(order_hour_of_day)) %>%
+  mutate(aisle = "soap")
+
+compare2<- 
+  bind_rows(fresh_fruits, soap)%>%
+  mutate(aisle = as.factor(aisle))
+
+compare2 %>%
+  plot_ly(x = ~order_dow, y = ~mean_hour, color = ~aisle, type = "scatter", mode = "lines", colors = "viridis")%>%
+  layout(title = 'Mean hour of the day at which Fresh Fruits and Soap are Ordered',
+         xaxis = list(title = 'Day of a week'),
+         yaxis = list (title = 'Mean hour'))
+
+```
+
+### Density Plot
+
+```{r echo=FALSE, message=FALSE}
+compare2_2 <-
+  instacart %>%
+  filter(aisle=="fresh fruits" | aisle=="soap")
+
+
+compare2_2 %>% 
+  plot_ly(y = ~add_to_cart_order, color = ~aisle, type = "box", colors = "viridis")%>%
+  layout(title = 'Distribution of Add-to-cart Order for Fresh Fruits and Soap',
+         xaxis = list(title = 'Aisle'),
+         yaxis = list (title = 'Order in which each product was added to cart'))
+```
